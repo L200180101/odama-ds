@@ -1,0 +1,82 @@
+/* ============================================================
+   ODAMA DESIGN SYSTEM — DESIGN TOKENS
+   Extracted from Figma: Website-Odama--DEV---Copy-
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  /* ── Colors ──────────────────────────────────────────────── */
+
+  /* Brand */
+  --color-brand-black:   #000000;
+  --color-brand-white:   #FFFFFF;
+  --color-brand-orange:  #FF5B01;
+
+  /* Neutral */
+  --color-neutral-gray:  #999999;
+  --color-neutral-border: #DADADA;
+
+  /* Backgrounds */
+  --color-bg-cream:      #F5F4F0;
+  --color-bg-light:      #F1F1F1;
+  --color-bg-warm-gray:  #DBDBDA;
+  --color-bg-dark-olive: #6D6E5E;
+
+  /* Overlay */
+  --color-overlay-dark:  #161616;
+
+  /* ── Typography ──────────────────────────────────────────── */
+  --font-family-base: 'Switzer', 'Inter', sans-serif;
+
+  /* Font sizes */
+  --text-sm:            14px;
+  --text-base:          16px;
+  --text-title:         24px;
+  --text-h2:            32px;
+  --text-h1:            36px;
+  --text-display-md:    96px;
+  --text-display-lg:   128px;
+
+  /* Font weights */
+  --font-weight-regular: 400;
+  --font-weight-medium:  500;
+
+  /* Line heights */
+  --leading-none:   1;
+  --leading-tight:  1.2;
+  --leading-normal: 1.25;
+  --leading-loose:  1.5;
+
+  /* Letter spacing */
+  --tracking-tight: -2px;
+  --tracking-normal: 0;
+
+  /* ── Spacing ──────────────────────────────────────────────── */
+  --space-1:    4px;
+  --space-2:    8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-6:   24px;
+  --space-10:  40px;
+  --space-20:  80px;
+  --space-24:  96px;
+  --space-28: 110px;
+  --space-32: 128px;
+  --space-40: 160px;
+  --space-50: 200px;
+
+  /* ── Border Radius ───────────────────────────────────────── */
+  --radius-sm:   8px;
+  --radius-md:  16px;
+  --radius-full: 24px;
+
+  /* ── Shadows / Effects ───────────────────────────────────── */
+  --blur-button:       blur(24px);
+  --shadow-card:       0 1px 4px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+  --shadow-elevated:   0 4px 24px rgba(0,0,0,0.10);
+
+  /* ── Layout ──────────────────────────────────────────────── */
+  --sidebar-width: 256px;
+  --content-max:   900px;
+}

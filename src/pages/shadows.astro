@@ -1,0 +1,252 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const shadows = [
+  {
+    name: 'Shadow / Card',
+    token: '--shadow-card',
+    value: '0 1px 4px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04)',
+    usage: 'Default card elevation — subtle lift on white surfaces',
+    level: 1,
+  },
+  {
+    name: 'Shadow / Elevated',
+    token: '--shadow-elevated',
+    value: '0 4px 24px rgba(0,0,0,0.10)',
+    usage: 'Elevated modals, tooltips, dropdown panels',
+    level: 2,
+  },
+];
+
+const blurs = [
+  {
+    name: 'Background Blur / Button',
+    token: '--blur-button',
+    value: 'blur(24px)',
+    cssValue: 'backdrop-filter: blur(24px)',
+    figma: 'Background Blur/Button',
+    usage: 'Glassmorphism nav, frosted-glass buttons and overlays',
+    radius: '24px',
+  },
+];
+
+const radii = [
+  { name: 'Radius / Small',  token: '--radius-sm',   value: '8px',  usage: 'Buttons (text area), cards, inputs, tags' },
+  { name: 'Radius / Medium', token: '--radius-md',   value: '16px', usage: 'Avatar images, testimonial photos, media containers' },
+  { name: 'Radius / Full',   token: '--radius-full', value: '24px', usage: 'Button icon pill, tags, badge shapes' },
+];
+---
+
+<BaseLayout title="Shadows & Effects" activeNav="shadows">
+  <div class="page-hero">
+    <div class="page-hero-eyebrow">Foundations</div>
+    <h1 class="page-hero-title">Shadows &amp; Effects</h1>
+    <p class="page-hero-desc">
+      Elevation, blur, and border radius tokens from the Odama design system.
+      The primary effect is backdrop-blur for the glassmorphism navigation.
+    </p>
+    <div class="page-hero-meta">
+      <div class="page-hero-meta-item"><strong>Shadows</strong>2 levels</div>
+      <div class="page-hero-meta-item"><strong>Blurs</strong>1 backdrop blur (24px)</div>
+      <div class="page-hero-meta-item"><strong>Border Radius</strong>3 tokens</div>
+      <div class="page-hero-meta-item"><strong>Source</strong>Figma Effect Styles</div>
+    </div>
+  </div>
+
+  <!-- Shadows -->
+  <div class="ds-section">
+    <div class="ds-section-header">
+      <span class="ds-section-num">01</span>
+      <div>
+        <div class="ds-section-title">Box Shadows</div>
+        <div class="ds-section-subtitle">Two-level elevation system for surfaces and overlays</div>
+      </div>
+    </div>
+    <div class="shadow-grid">
+      {shadows.map(s => (
+        <div>
+          <div class="shadow-demo" style={`box-shadow:${s.value};`}>
+            <div style="font-size:13px;font-weight:500;color:#000;">{s.name}</div>
+          </div>
+          <div style="margin-top:10px;">
+            <div class="shadow-label">{s.name}</div>
+            <code class="shadow-value">{s.value}</code>
+            <div style="font-size:11px;color:#999;margin-top:4px;">{s.usage}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div style="margin-top:32px;">
+      <table class="token-table">
+        <thead>
+          <tr>
+            <th>Token</th>
+            <th>Value</th>
+            <th>Usage</th>
+          </tr>
+        </thead>
+        <tbody>
+          {shadows.map(s => (
+            <tr>
+              <td><code class="token-name">{s.token}</code></td>
+              <td><code class="token-value" style="font-size:11px;">{s.value}</code></td>
+              <td style="font-size:12px;color:#666;">{s.usage}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Backdrop Blur -->
+  <div class="ds-section">
+    <div class="ds-section-header">
+      <span class="ds-section-num">02</span>
+      <div>
+        <div class="ds-section-title">Backdrop Blur</div>
+        <div class="ds-section-subtitle">Glassmorphism effect — sourced from Figma's Background Blur/Button style</div>
+      </div>
+    </div>
+
+    {blurs.map(b => (
+      <div class="blur-demo-wrap">
+        <div class="blur-bg">
+          <div style="position:absolute;top:20px;left:20px;width:120px;height:120px;background:#FF5B01;border-radius:50%;opacity:0.7;"></div>
+          <div style="position:absolute;bottom:20px;right:40px;width:100px;height:100px;background:#000;border-radius:50%;opacity:0.5;"></div>
+          <div class="blur-card">
+            <div style="font-size:13px;font-weight:500;color:#000;margin-bottom:4px;">{b.name}</div>
+            <div style="font-size:11px;color:#555;">{b.cssValue}</div>
+          </div>
+        </div>
+        <div class="blur-meta">
+          <table class="token-table">
+            <thead>
+              <tr><th>Token</th><th>Value</th><th>Figma Style</th><th>Usage</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code class="token-name">{b.token}</code></td>
+                <td><code class="token-value">{b.value}</code></td>
+                <td style="font-size:12px;color:#666;">{b.figma}</td>
+                <td style="font-size:12px;color:#666;">{b.usage}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <!-- Border Radius -->
+  <div class="ds-section">
+    <div class="ds-section-header">
+      <span class="ds-section-num">03</span>
+      <div>
+        <div class="ds-section-title">Border Radius</div>
+        <div class="ds-section-subtitle">Three corner radius tokens used across components</div>
+      </div>
+    </div>
+    <div class="radius-grid">
+      {radii.map(r => (
+        <div class="radius-card">
+          <div class="radius-demo" style={`border-radius:${r.value};`}></div>
+          <div class="radius-info">
+            <div class="radius-name">{r.name}</div>
+            <code class="radius-val">{r.value}</code>
+            <div class="radius-token">{r.token}</div>
+            <div class="radius-usage">{r.usage}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div style="margin-top:32px;">
+      <table class="token-table">
+        <thead>
+          <tr><th>Token</th><th>Value</th><th>Used on</th></tr>
+        </thead>
+        <tbody>
+          {radii.map(r => (
+            <tr>
+              <td><code class="token-name">{r.token}</code></td>
+              <td><code class="token-value">{r.value}</code></td>
+              <td style="font-size:12px;color:#666;">{r.usage}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Live Demo -->
+  <div class="ds-section">
+    <div class="ds-section-header">
+      <span class="ds-section-num">04</span>
+      <div>
+        <div class="ds-section-title">Effects in Context</div>
+        <div class="ds-section-subtitle">How shadows, blur, and radius combine in the Odama nav</div>
+      </div>
+    </div>
+    <div style="background:linear-gradient(135deg,#FF5B01 0%,#000 100%);padding:40px;border-radius:8px;position:relative;overflow:hidden;">
+      <div style="display:flex;align-items:center;gap:24px;background:rgba(255,255,255,0.8);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.3);border-radius:8px;padding:12px 20px;position:relative;z-index:1;">
+        <span style="font-size:15px;font-weight:500;color:#000;margin-right:auto;">Odama</span>
+        <span style="font-size:13px;color:#999;">About</span>
+        <span style="font-size:13px;color:#999;">Work</span>
+        <span style="font-size:13px;color:#999;">Blog</span>
+        <span style="background:#000;color:#fff;font-size:13px;font-weight:500;padding:6px 14px;border-radius:6px;">Let's Talk</span>
+      </div>
+      <p style="margin-top:12px;font-size:11px;color:rgba(255,255,255,0.5);position:relative;z-index:1;">backdrop-filter: blur(24px) · border-radius: 8px · bg: rgba(255,255,255,0.8)</p>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .blur-demo-wrap { display: flex; flex-direction: column; gap: 16px; }
+  .blur-bg {
+    position: relative;
+    height: 180px;
+    background: linear-gradient(135deg, #F5F4F0, #DBDBDA);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--color-neutral-border);
+  }
+  .blur-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 8px;
+    padding: 16px 24px;
+    white-space: nowrap;
+  }
+
+  .radius-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  .radius-card {
+    border: 1px solid var(--color-neutral-border);
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+  }
+  .radius-demo {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, var(--color-brand-orange), rgba(255,91,1,0.3));
+    margin: 20px auto;
+  }
+  .radius-info {
+    padding: 12px 16px;
+    border-top: 1px solid #f5f5f5;
+  }
+  .radius-name { font-size: 12px; font-weight: 500; margin-bottom: 2px; }
+  .radius-val { font-family: monospace; font-size: 14px; font-weight: 600; color: #FF5B01; display: block; margin: 2px 0; }
+  .radius-token { font-family: monospace; font-size: 10px; color: #bbb; margin-bottom: 6px; }
+  .radius-usage { font-size: 11px; color: #999; line-height: 1.4; }
+</style>

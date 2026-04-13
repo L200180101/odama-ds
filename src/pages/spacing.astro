@@ -1,0 +1,199 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const spacingScale = [
+  { token: '--space-1',  name: 'space-1',  value: '4px',   usage: 'Icon gap, micro-nudges' },
+  { token: '--space-2',  name: 'space-2',  value: '8px',   usage: 'Button padding, tight gaps' },
+  { token: '--space-3',  name: 'space-3',  value: '12px',  usage: 'Button text padding' },
+  { token: '--space-4',  name: 'space-4',  value: '16px',  usage: 'Default padding, sidebar gutter' },
+  { token: '--space-6',  name: 'space-6',  value: '24px',  usage: 'Card gap, section inner padding' },
+  { token: '--space-10', name: 'space-10', value: '40px',  usage: 'Section horizontal padding' },
+  { token: '--space-20', name: 'space-20', value: '80px',  usage: 'Testimonial row gaps, section top padding' },
+  { token: '--space-24', name: 'space-24', value: '96px',  usage: 'Large section spacing' },
+  { token: '--space-28', name: 'space-28', value: '110px', usage: 'Hero vertical padding' },
+  { token: '--space-32', name: 'space-32', value: '128px', usage: 'Page-level vertical rhythm' },
+  { token: '--space-40', name: 'space-40', value: '160px', usage: 'Full-bleed section padding' },
+  { token: '--space-50', name: 'space-50', value: '200px', usage: 'Maximum layout spacer' },
+];
+
+const maxBarWidth = 400;
+const maxVal = 200;
+---
+
+<BaseLayout title="Spacing" activeNav="spacing">
+  <div class="page-hero">
+    <div class="page-hero-eyebrow">Foundations</div>
+    <h1 class="page-hero-title">Spacing</h1>
+    <p class="page-hero-desc">
+      A 12-step spacing scale extracted from the Odama Figma file — from 4px micro-nudges
+      to 200px full-bleed section spacers. All values are powers-of-4 friendly.
+    </p>
+    <div class="page-hero-meta">
+      <div class="page-hero-meta-item"><strong>Steps</strong>12 tokens</div>
+      <div class="page-hero-meta-item"><strong>Range</strong>4px — 200px</div>
+      <div class="page-hero-meta-item"><strong>Base Unit</strong>4px</div>
+    </div>
+  </div>
+
+  <!-- Visual Scale -->
+  <div class="ds-section">
+    <div class="ds-section-header">
+      <span class="ds-section-num">01</span>
+      <div>
+        <div class="ds-section-title">Spacing Scale</div>
+        <div class="ds-section-subtitle">Visual representation of all spacing tokens</div>
+      </div>
+    </div>
+    <div class="spacing-list">
+      {spacingScale.map(s => {
+        const barWidth = Math.round((parseInt(s.value) / maxVal) * maxBarWidth);
+        return (
+          <div class="spacing-row">
+            <span class="spacing-label">{s.name}</span>
+            <span class="spacing-value">{s.value}</span>
+            <div class="spacing-bar-wrap">
+              <div class="spacing-bar" style={`width:${barWidth}px;`}></div>
+            </div>
+            <code class="spacing-token">{s.token}</code>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+
+  <!-- Token Reference -->
+  <div class="ds-section">
+    <div class="ds-section-header">
+      <span class="ds-section-num">02</span>
+      <div>
+        <div class="ds-section-title">Token Reference</div>
+        <div class="ds-section-subtitle">CSS custom property names, values, and usage context</div>
+      </div>
+    </div>
+    <table class="token-table">
+      <thead>
+        <tr>
+          <th>Token</th>
+          <th>Value</th>
+          <th>Rem</th>
+          <th>Usage in Figma</th>
+        </tr>
+      </thead>
+      <tbody>
+        {spacingScale.map(s => (
+          <tr>
+            <td><code class="token-name">{s.token}</code></td>
+            <td><code class="token-value">{s.value}</code></td>
+            <td style="font-size:12px;color:#999;">{(parseInt(s.value)/16).toFixed(4).replace(/\.?0+$/, '')}rem</td>
+            <td style="font-size:12px;color:#666;">{s.usage}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Spatial Demo -->
+  <div class="ds-section">
+    <div class="ds-section-header">
+      <span class="ds-section-num">03</span>
+      <div>
+        <div class="ds-section-title">Spatial Reference</div>
+        <div class="ds-section-subtitle">Visual blocks showing each spacing value at actual size</div>
+      </div>
+    </div>
+    <div class="spatial-demo">
+      {spacingScale.slice(0, 8).map(s => (
+        <div class="spatial-item">
+          <div class="spatial-block" style={`width:${s.value};height:${s.value};`}></div>
+          <div class="spatial-label">{s.value}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Component Spacing -->
+  <div class="ds-section">
+    <div class="ds-section-header">
+      <span class="ds-section-num">04</span>
+      <div>
+        <div class="ds-section-title">Component Spacing Patterns</div>
+        <div class="ds-section-subtitle">Spacing tokens applied in UI components</div>
+      </div>
+    </div>
+    <div class="spacing-patterns">
+      <div class="spacing-pattern-item">
+        <div class="sp-label">Button</div>
+        <div class="sp-preview" style="display:flex;gap:4px;align-items:center;">
+          <div style="background:#fff;border:1px solid #DADADA;border-radius:8px;padding:12px 16px;font-size:14px;font-weight:500;display:inline-flex;align-items:center;">
+            View More
+            <span style="display:inline-flex;width:36px;height:36px;background:#fff;border:1px solid #DADADA;border-radius:24px;align-items:center;justify-content:center;margin-left:4px;">&#8594;</span>
+          </div>
+        </div>
+        <div class="sp-tokens" style="font-size:12px;color:#999;margin-top:8px;">
+          gap: <code>4px</code> · padding: <code>12px 16px</code> · icon-pad: <code>8px</code>
+        </div>
+      </div>
+
+      <div class="spacing-pattern-item">
+        <div class="sp-label">Testimonial Row</div>
+        <div class="sp-preview" style="border:1px solid #eee;border-radius:8px;overflow:hidden;">
+          <div style="padding:24px 16px;background:#fff;border-bottom:1px solid #eee;">
+            <div style="display:flex;gap:8px;align-items:flex-start;">
+              <div style="width:60px;font-size:12px;font-weight:500;color:#000;">01</div>
+              <div style="font-size:13px;line-height:1.4;color:#000;flex:1;">Working with Odama felt like working with a partner, not a vendor.</div>
+              <div style="width:40px;height:40px;border-radius:8px;background:#F5F4F0;flex-shrink:0;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="sp-tokens" style="font-size:12px;color:#999;margin-top:8px;">
+          padding-top: <code>80px</code> · px: <code>16px</code> · gap: <code>8px</code>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .spatial-demo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 20px;
+    padding: 20px;
+    background: var(--color-bg-cream);
+    border: 1px solid var(--color-neutral-border);
+    border-radius: 8px;
+  }
+  .spatial-item { text-align: center; }
+  .spatial-block {
+    background: linear-gradient(135deg, #FF5B01, rgba(255,91,1,0.4));
+    border-radius: 3px;
+    min-width: 4px;
+    min-height: 4px;
+    margin-bottom: 6px;
+  }
+  .spatial-label {
+    font-size: 10px;
+    color: #999;
+    font-family: monospace;
+  }
+
+  .spacing-patterns { display: flex; flex-direction: column; gap: 24px; }
+  .sp-label {
+    font-size: 11px;
+    font-weight: 500;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin-bottom: 10px;
+  }
+  .sp-preview { background: var(--color-bg-cream); padding: 16px; border-radius: 8px; border: 1px solid var(--color-neutral-border); }
+  .sp-tokens code {
+    font-family: monospace;
+    font-size: 11px;
+    background: #eee;
+    padding: 1px 4px;
+    border-radius: 3px;
+    color: #444;
+  }
+</style>

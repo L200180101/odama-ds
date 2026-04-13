@@ -1,0 +1,171 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Overview" activeNav="overview">
+  <!-- Hero -->
+  <div class="page-hero">
+    <div class="page-hero-eyebrow">Design System</div>
+    <h1 class="page-hero-title">Odama Design System</h1>
+    <p class="page-hero-desc">
+      A documentation of all design tokens, foundations, and UI components used across
+      Odama's digital products and website — extracted directly from Figma.
+    </p>
+    <div class="page-hero-meta">
+      <div class="page-hero-meta-item"><strong>Font</strong>Switzer</div>
+      <div class="page-hero-meta-item"><strong>Colors</strong>10 tokens</div>
+      <div class="page-hero-meta-item"><strong>Type Styles</strong>8 styles</div>
+      <div class="page-hero-meta-item"><strong>Components</strong>10 components</div>
+      <div class="page-hero-meta-item"><strong>Version</strong>1.0.0</div>
+    </div>
+  </div>
+
+  <!-- Introduction -->
+  <div class="ds-section">
+    <div class="ds-section-header">
+      <span class="ds-section-num">01</span>
+      <div>
+        <div class="ds-section-title">About this system</div>
+        <div class="ds-section-subtitle">Design principles and philosophy behind Odama Studio</div>
+      </div>
+    </div>
+    <p style="font-size:15px;line-height:1.7;color:#444;max-width:640px;margin-bottom:24px;">
+      Odama is a digital design studio based in Indonesia, working globally. This design system
+      captures the visual language used across all Odama digital products — from brand identity
+      to website, from components to typography.
+    </p>
+    <blockquote style="border-left:3px solid #FF5B01;padding-left:20px;font-size:17px;font-weight:500;color:#000;line-height:1.4;max-width:520px;">
+      "We don't start with visuals. We start with understanding context, constraints, and what matters."
+    </blockquote>
+  </div>
+
+  <!-- Quick Nav -->
+  <div class="ds-section">
+    <div class="ds-section-header">
+      <span class="ds-section-num">02</span>
+      <div>
+        <div class="ds-section-title">Foundations</div>
+        <div class="ds-section-subtitle">Core design decisions encoded as tokens</div>
+      </div>
+    </div>
+    <div class="overview-cards">
+      <a href="/colors" class="overview-card">
+        <div class="overview-card-icon">&#9689;</div>
+        <div class="overview-card-title">Colors</div>
+        <div class="overview-card-desc">10 color tokens across brand, neutral, and background palettes</div>
+      </a>
+      <a href="/typography" class="overview-card">
+        <div class="overview-card-icon">T</div>
+        <div class="overview-card-title">Typography</div>
+        <div class="overview-card-desc">8 type styles built on Switzer — from 14px body to 128px display</div>
+      </a>
+      <a href="/spacing" class="overview-card">
+        <div class="overview-card-icon">&#8597;</div>
+        <div class="overview-card-title">Spacing</div>
+        <div class="overview-card-desc">12-step spacing scale from 4px to 200px</div>
+      </a>
+      <a href="/shadows" class="overview-card">
+        <div class="overview-card-icon">&#9675;</div>
+        <div class="overview-card-title">Shadows</div>
+        <div class="overview-card-desc">Elevation system and blur effects</div>
+      </a>
+      <a href="/components" class="overview-card">
+        <div class="overview-card-icon">&#9703;</div>
+        <div class="overview-card-title">Components</div>
+        <div class="overview-card-desc">UI building blocks extracted from the Odama website design</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Brand -->
+  <div class="ds-section">
+    <div class="ds-section-header">
+      <span class="ds-section-num">03</span>
+      <div>
+        <div class="ds-section-title">Brand Identity</div>
+        <div class="ds-section-subtitle">Studio information and brand positioning</div>
+      </div>
+    </div>
+    <div class="brand-grid">
+      <div class="brand-item">
+        <div class="brand-item-label">Studio</div>
+        <div class="brand-item-value">Odama Studio</div>
+        <div class="brand-item-sub">Digital Design Agency</div>
+      </div>
+      <div class="brand-item">
+        <div class="brand-item-label">Location</div>
+        <div class="brand-item-value">Indonesia</div>
+        <div class="brand-item-sub">Working globally</div>
+      </div>
+      <div class="brand-item">
+        <div class="brand-item-label">Contact</div>
+        <div class="brand-item-value">odamastudio@gmail.com</div>
+        <div class="brand-item-sub">+62 822 8898 0909</div>
+      </div>
+      <div class="brand-item">
+        <div class="brand-item-label">Stats</div>
+        <div class="brand-item-value">100+ clients</div>
+        <div class="brand-item-sub">5+ years &middot; 22 members</div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .overview-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+  }
+  .overview-card {
+    display: block;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 20px;
+    background: #fff;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    text-decoration: none;
+    color: inherit;
+  }
+  .overview-card:hover {
+    border-color: #FF5B01;
+    box-shadow: 0 4px 16px rgba(255,91,1,0.08);
+  }
+  .overview-card-icon {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #FF5B01;
+  }
+  .overview-card-title {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  .overview-card-desc {
+    font-size: 12px;
+    color: #999;
+    line-height: 1.5;
+  }
+
+  .brand-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 24px;
+  }
+  .brand-item-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: #999;
+    margin-bottom: 6px;
+  }
+  .brand-item-value {
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .brand-item-sub {
+    font-size: 13px;
+    color: #999;
+    margin-top: 2px;
+  }
+</style>
