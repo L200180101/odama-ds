@@ -1,98 +1,69 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-
 <BaseLayout title="Components" activeNav="components">
+
   <div class="page-hero">
-    <div class="page-hero-eyebrow">UI Library</div>
-    <h1 class="page-hero-title">Components</h1>
-    <p class="page-hero-desc">
-      10 UI components extracted from the Odama website design. Each component
-      is shown as a live preview with token annotations.
-    </p>
-    <div class="page-hero-meta">
-      <div class="page-hero-meta-item"><strong>Total</strong>10 components</div>
-      <div class="page-hero-meta-item"><strong>Font</strong>Switzer</div>
-      <div class="page-hero-meta-item"><strong>Source</strong>Figma (2:105)</div>
+    <div class="hero-eyebrow"><span class="hero-eyebrow-dot"></span>UI Library</div>
+    <h1 class="hero-title"><em>Components</em></h1>
+    <p class="hero-desc">10 UI components extracted from the Odama website design — each shown as a live preview with token annotations from Figma.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><span class="hero-meta-label">Total</span><span class="hero-meta-value">10 components</span></div>
+      <div class="hero-meta-item"><span class="hero-meta-label">Font</span><span class="hero-meta-value">Switzer</span></div>
+      <div class="hero-meta-item"><span class="hero-meta-label">Source</span><span class="hero-meta-value">Figma node 2:105</span></div>
     </div>
   </div>
 
-  <!-- Buttons -->
+  <!-- 01 Button -->
   <div class="ds-section">
-    <div class="ds-section-header">
-      <span class="ds-section-num">01</span>
-      <div>
-        <div class="ds-section-title">Button</div>
-        <div class="ds-section-subtitle">Two-part button: text area + icon pill. Three visual variants.</div>
-      </div>
+    <div class="section-header">
+      <div class="section-label">01 — Button</div>
+      <div class="section-title">Button</div>
+      <div class="section-subtitle">Two-part compound button: text label + icon pill. Three variants.</div>
     </div>
     <div class="component-grid">
-
       <div class="component-card">
         <div class="component-canvas">
-          <button class="odama-btn">
-            View More
-            <span class="odama-btn-icon">&#8594;</span>
-          </button>
+          <button class="odama-btn">View More <span class="odama-btn-icon">→</span></button>
         </div>
         <div class="component-meta">
-          <div class="component-name">Default Button</div>
-          <div class="component-desc">White bg · Border Gray border · radius-sm text + radius-full icon</div>
-          <div class="comp-tokens">
-            <code>bg: Brand/White</code>
-            <code>border: Neutral/Border Gray</code>
-            <code>font: P/Tag &amp; Button</code>
-          </div>
+          <div class="component-name">Default</div>
+          <div class="component-desc">White bg, border gray border</div>
+          <div class="variant-tags"><span class="variant-tag">bg: Brand/White</span><span class="variant-tag">border: #DADADA</span><span class="variant-tag">font: 16px/500</span></div>
         </div>
       </div>
-
       <div class="component-card">
-        <div class="component-canvas dark">
-          <button class="odama-btn odama-btn-orange">
-            Let's Talk
-            <span class="odama-btn-icon" style="border-color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.1);">&#8594;</span>
-          </button>
+        <div class="component-canvas dark-canvas">
+          <button class="odama-btn odama-btn-orange">Let's Talk <span class="odama-btn-icon" style="border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.1);">→</span></button>
         </div>
         <div class="component-meta">
-          <div class="component-name">Orange CTA Button</div>
-          <div class="component-desc">Primary call-to-action variant on dark backgrounds</div>
-          <div class="comp-tokens">
-            <code>bg: Brand/Orange</code>
-            <code>color: Brand/White</code>
-          </div>
+          <div class="component-name">Orange CTA</div>
+          <div class="component-desc">Primary call-to-action on dark surfaces</div>
+          <div class="variant-tags"><span class="variant-tag">bg: #FF5B01</span><span class="variant-tag">color: White</span></div>
         </div>
       </div>
-
       <div class="component-card">
         <div class="component-canvas">
-          <button class="odama-btn odama-btn-dark">
-            Book a Call
-            <span class="odama-btn-icon" style="border-color:#333;background:#1a1a1a;">&#8594;</span>
-          </button>
+          <button class="odama-btn odama-btn-dark">Book a Call <span class="odama-btn-icon" style="border-color:#333;background:#1a1a1a;color:#fff;">→</span></button>
         </div>
         <div class="component-meta">
-          <div class="component-name">Dark Button</div>
-          <div class="component-desc">Dark variant for use on light / cream backgrounds</div>
-          <div class="comp-tokens">
-            <code>bg: Brand/Black</code>
-            <code>color: Brand/White</code>
-          </div>
+          <div class="component-name">Dark</div>
+          <div class="component-desc">Dark variant for light/cream backgrounds</div>
+          <div class="variant-tags"><span class="variant-tag">bg: Brand/Black</span><span class="variant-tag">color: White</span></div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Navigation -->
+  <!-- 02 Navigation -->
   <div class="ds-section">
-    <div class="ds-section-header">
-      <span class="ds-section-num">02</span>
-      <div>
-        <div class="ds-section-title">Navigation</div>
-        <div class="ds-section-subtitle">Glassmorphism navbar with backdrop blur</div>
-      </div>
+    <div class="section-header">
+      <div class="section-label">02 — Navigation</div>
+      <div class="section-title">Navigation Bar</div>
+      <div class="section-subtitle">Glassmorphism navbar with backdrop-filter: blur(24px)</div>
     </div>
     <div class="component-card">
-      <div class="component-canvas" style="padding:16px;background:linear-gradient(135deg,#111,#333);">
+      <div class="component-canvas" style="padding:20px;background:linear-gradient(135deg,#1a1a1a,#333);">
         <div class="odama-nav">
           <span class="odama-nav-logo">Odama</span>
           <span class="odama-nav-link">About</span>
@@ -104,95 +75,79 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
       <div class="component-meta">
         <div class="component-name">Navigation Bar</div>
-        <div class="component-desc">Fixed/sticky nav with glassmorphism effect</div>
-        <div class="comp-tokens">
-          <code>bg: rgba(255,255,255,0.8)</code>
-          <code>backdrop-filter: blur(24px)</code>
-          <code>border: Neutral/Border Gray</code>
-          <code>links: P/Tag &amp; Button</code>
+        <div class="component-desc">Fixed sticky nav — appears over hero content</div>
+        <div class="variant-tags">
+          <span class="variant-tag">bg: rgba(255,255,255,0.85)</span>
+          <span class="variant-tag">backdrop-filter: blur(24px)</span>
+          <span class="variant-tag">border: #DADADA</span>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Tag / Badge -->
+  <!-- 03 Tag -->
   <div class="ds-section">
-    <div class="ds-section-header">
-      <span class="ds-section-num">03</span>
-      <div>
-        <div class="ds-section-title">Tag / Badge</div>
-        <div class="ds-section-subtitle">Section label and eyebrow text element</div>
-      </div>
+    <div class="section-header">
+      <div class="section-label">03 — Tag</div>
+      <div class="section-title">Eyebrow Tag / Badge</div>
+      <div class="section-subtitle">Section label element placed above headings</div>
     </div>
     <div class="component-grid">
       <div class="component-card">
         <div class="component-canvas">
-          <span class="odama-tag">Digital Agency</span>
+          <span class="odama-tag"><span style="width:6px;height:6px;border-radius:50%;background:var(--orange);flex-shrink:0;"></span>Digital Agency</span>
         </div>
         <div class="component-meta">
           <div class="component-name">Eyebrow Tag</div>
-          <div class="component-desc">Used as section labels above headings</div>
-          <div class="comp-tokens">
-            <code>bg: rgba(FF5B01, 0.10)</code>
-            <code>color: Brand/Orange</code>
-            <code>border-radius: radius-full</code>
-          </div>
+          <div class="component-desc">Used above section headings</div>
+          <div class="variant-tags"><span class="variant-tag">bg: rgba(FF5B01, .10)</span><span class="variant-tag">color: Brand/Orange</span><span class="variant-tag">border-radius: 999px</span></div>
         </div>
       </div>
       <div class="component-card">
-        <div class="component-canvas dark">
-          <span class="odama-tag" style="background:rgba(255,91,1,0.15);border-color:rgba(255,91,1,0.3);">Foundations</span>
+        <div class="component-canvas dark-canvas">
+          <span class="odama-tag">Foundations</span>
         </div>
         <div class="component-meta">
           <div class="component-name">Tag (on dark)</div>
-          <div class="component-desc">Same token — slightly increased opacity on dark</div>
-          <div class="comp-tokens">
-            <code>color: Brand/Orange</code>
-          </div>
+          <div class="component-desc">Same styles work on dark backgrounds</div>
+          <div class="variant-tags"><span class="variant-tag">color: Brand/Orange</span></div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Testimonial -->
+  <!-- 04 Testimonial -->
   <div class="ds-section">
-    <div class="ds-section-header">
-      <span class="ds-section-num">04</span>
-      <div>
-        <div class="ds-section-title">Testimonial Card</div>
-        <div class="ds-section-subtitle">Client quote component with author attribution</div>
-      </div>
+    <div class="section-header">
+      <div class="section-label">04 — Testimonial</div>
+      <div class="section-title">Testimonial Row</div>
+      <div class="section-subtitle">Full-width client quote with numbered index</div>
     </div>
     <div class="component-card">
-      <div class="component-canvas" style="padding:32px;align-items:flex-start;">
-        <div class="odama-testimonial" style="max-width:100%;width:100%;">
-          <p style="font-size:11px;font-weight:500;color:#999;text-transform:uppercase;letter-spacing:.05em;margin-bottom:16px;">01</p>
-          <p class="odama-testimonial-quote">Working with Odama felt like working with a partner, not a vendor. They listened deeply, translated abstract ideas into visuals.</p>
+      <div class="component-canvas" style="padding:32px;align-items:flex-start;background:var(--bg-surface);">
+        <div style="width:100%;">
+          <div style="font-size:10px;font-weight:500;color:var(--text-disabled);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px;">01</div>
+          <p class="odama-testimonial-quote">Working with Odama felt like working with a partner, not a vendor. They listened deeply, translated abstract ideas into visuals, and respected the soul of our brand.</p>
           <p class="odama-testimonial-author">Pinan Aisyah, Florebastille</p>
         </div>
       </div>
       <div class="component-meta">
         <div class="component-name">Testimonial Row</div>
-        <div class="component-desc">Full-width testimonial section with index number, quote, and attribution</div>
-        <div class="comp-tokens">
-          <code>quote: P/Title (24px)</code>
-          <code>author: P/Paragraph</code>
-          <code>index: P/Tag &amp; Button</code>
-          <code>divider: Neutral/Border Gray</code>
-          <code>alt-bg: Background/Warm Cream</code>
+        <div class="variant-tags">
+          <span class="variant-tag">quote: P/Title 24px</span>
+          <span class="variant-tag">author: P/Paragraph</span>
+          <span class="variant-tag">alt-bg: #F5F4F0</span>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Stat Counter -->
+  <!-- 05 Stat -->
   <div class="ds-section">
-    <div class="ds-section-header">
-      <span class="ds-section-num">05</span>
-      <div>
-        <div class="ds-section-title">Stat Counter</div>
-        <div class="ds-section-subtitle">Large numeric display with descriptor</div>
-      </div>
+    <div class="section-header">
+      <div class="section-label">05 — Stat</div>
+      <div class="section-title">Stat Counter</div>
+      <div class="section-subtitle">Large numeric display with descriptor — uses Big Text/Large (128px)</div>
     </div>
     <div class="component-grid">
       {[
@@ -209,34 +164,29 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
           <div class="component-meta">
             <div class="component-name">Stat: {s.num}</div>
-            <div class="comp-tokens">
-              <code>number: Big Text/Large (128px)</code>
-              <code>label: P/Paragraph</code>
-            </div>
+            <div class="variant-tags"><span class="variant-tag">number: 48px/500</span><span class="variant-tag">label: 13px/400</span></div>
           </div>
         </div>
       ))}
     </div>
   </div>
 
-  <!-- Card -->
+  <!-- 06 Value Card -->
   <div class="ds-section">
-    <div class="ds-section-header">
-      <span class="ds-section-num">06</span>
-      <div>
-        <div class="ds-section-title">Value Proposition Card</div>
-        <div class="ds-section-subtitle">Used in the "Why" section — tall card with title and body text</div>
-      </div>
+    <div class="section-header">
+      <div class="section-label">06 — Card</div>
+      <div class="section-title">Value Proposition Card</div>
+      <div class="section-subtitle">Used in the "Why" section — tall cards with label, title, and body</div>
     </div>
     <div class="component-grid">
       {[
-        { label: 'Strategy first',       title: 'We think before we design', body: 'Every brief is interrogated. We challenge assumptions to find the real problem.' },
-        { label: 'Deep collaboration',   title: "You're a partner, not a client", body: 'We work alongside you — sharing reasoning, welcoming feedback, building together.' },
-        { label: 'Intentional craft',    title: 'No decoration without reason', body: 'Every visual decision has a purpose rooted in your brand and audience.' },
+        { label: 'Strategy first',     title: 'We think before we design', body: 'Every brief is interrogated. We challenge assumptions to find the real problem.' },
+        { label: 'Deep collaboration', title: "You're a partner, not a client", body: 'We work alongside you — sharing reasoning, welcoming feedback, building together.' },
+        { label: 'Intentional craft',  title: 'No decoration without reason', body: 'Every visual decision has a purpose rooted in your brand and audience.' },
       ].map(c => (
         <div class="component-card">
           <div class="component-canvas" style="align-items:stretch;padding:0;">
-            <div class="odama-card" style="border-radius:0;border:none;min-height:200px;width:100%;">
+            <div class="odama-card" style="border-radius:0;border:none;min-height:180px;width:100%;">
               <div class="odama-card-label">{c.label}</div>
               <div class="odama-card-title">{c.title}</div>
               <div class="odama-card-body">{c.body}</div>
@@ -244,11 +194,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
           <div class="component-meta">
             <div class="component-name">{c.title}</div>
-            <div class="comp-tokens">
-              <code>bg: Background/Warm Cream</code>
-              <code>label: P/Small Text</code>
-              <code>title: H2/Large</code>
-              <code>body: P/Paragraph</code>
+            <div class="variant-tags">
+              <span class="variant-tag">bg: #F5F4F0</span>
+              <span class="variant-tag">title: H2/Large</span>
+              <span class="variant-tag">body: P/Paragraph</span>
             </div>
           </div>
         </div>
@@ -256,172 +205,107 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </div>
 
-  <!-- Avatar -->
+  <!-- 07 Avatar -->
   <div class="ds-section">
-    <div class="ds-section-header">
-      <span class="ds-section-num">07</span>
-      <div>
-        <div class="ds-section-title">Avatar</div>
-        <div class="ds-section-subtitle">Team member photo component — 110×110px with rounded corners</div>
-      </div>
+    <div class="section-header">
+      <div class="section-label">07 — Avatar</div>
+      <div class="section-title">Team Avatar</div>
+      <div class="section-subtitle">110×110px photo container with border-radius: 16px</div>
     </div>
     <div class="component-grid">
       {['#F5F4F0','#DBDBDA','#F1F1F1'].map((bg, i) => (
         <div class="component-card">
           <div class="component-canvas">
-            <div style={`width:88px;height:88px;border-radius:16px;background:${bg};border:1px solid #e5e5e5;display:flex;align-items:center;justify-content:center;font-size:24px;color:#999;`}>&#128100;</div>
+            <div style={`width:80px;height:80px;border-radius:16px;background:${bg};border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:28px;color:var(--text-disabled);`}>◉</div>
           </div>
           <div class="component-meta">
             <div class="component-name">Avatar {i + 1}</div>
-            <div class="component-desc">Team member photo container</div>
-            <div class="comp-tokens">
-              <code>size: 110×110px</code>
-              <code>border-radius: radius-md (16px)</code>
-              <code>bg: {bg}</code>
-            </div>
+            <div class="variant-tags"><span class="variant-tag">110×110px</span><span class="variant-tag">border-radius: 16px</span><span class="variant-tag">bg: {bg}</span></div>
           </div>
         </div>
       ))}
     </div>
   </div>
 
-  <!-- Footer -->
+  <!-- 08 Footer -->
   <div class="ds-section">
-    <div class="ds-section-header">
-      <span class="ds-section-num">08</span>
-      <div>
-        <div class="ds-section-title">Footer</div>
-        <div class="ds-section-subtitle">Page footer with links and studio info</div>
-      </div>
+    <div class="section-header">
+      <div class="section-label">08 — Footer</div>
+      <div class="section-title">Page Footer</div>
+      <div class="section-subtitle">Dark footer with links, social, and studio info</div>
     </div>
     <div class="component-card">
-      <div class="component-canvas dark" style="align-items:stretch;padding:0;">
-        <div style="background:#000;width:100%;padding:32px;color:#fff;">
-          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px;flex-wrap:wrap;gap:24px;">
+      <div class="component-canvas dark-canvas" style="align-items:stretch;padding:0;">
+        <div style="background:#000;width:100%;padding:28px 24px;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px;flex-wrap:wrap;gap:20px;">
             <div>
-              <div style="font-size:20px;font-weight:500;margin-bottom:8px;">Odama</div>
-              <div style="font-size:13px;color:#999;line-height:1.5;">Digital Design Studio<br/>Indonesia · Working globally</div>
+              <div style="font-size:18px;font-weight:500;color:#fff;margin-bottom:6px;">Odama</div>
+              <div style="font-size:12px;color:#555;line-height:1.6;">Digital Design Studio<br/>Indonesia · Working globally</div>
             </div>
-            <div style="display:flex;gap:32px;flex-wrap:wrap;">
+            <div style="display:flex;gap:28px;flex-wrap:wrap;">
               <div>
-                <div style="font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#555;margin-bottom:10px;">Links</div>
-                {['About', 'Blog', 'Works', 'Contact'].map(l => (
-                  <div style="font-size:13px;color:#999;margin-bottom:6px;">{l}</div>
-                ))}
+                <div style="font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#333;margin-bottom:8px;">Links</div>
+                {['About','Blog','Works','Contact'].map(l => <div style="font-size:12px;color:#666;margin-bottom:5px;">{l}</div>)}
               </div>
               <div>
-                <div style="font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#555;margin-bottom:10px;">Social</div>
-                {['Instagram', 'LinkedIn', 'Behance', 'Dribbble'].map(s => (
-                  <div style="font-size:13px;color:#999;margin-bottom:6px;">{s}</div>
-                ))}
+                <div style="font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#333;margin-bottom:8px;">Social</div>
+                {['Instagram','LinkedIn','Behance'].map(l => <div style="font-size:12px;color:#666;margin-bottom:5px;">{l}</div>)}
               </div>
             </div>
           </div>
-          <div style="border-top:1px solid #1a1a1a;padding-top:16px;display:flex;justify-content:space-between;font-size:11px;color:#555;">
-            <span>&copy; 2025 Odama Studio. All rights reserved.</span>
-            <span>Privacy Policy</span>
+          <div style="border-top:1px solid #1a1a1a;padding-top:14px;display:flex;justify-content:space-between;font-size:11px;color:#444;">
+            <span>© 2025 Odama Studio</span><span>Privacy Policy</span>
           </div>
         </div>
       </div>
       <div class="component-meta">
         <div class="component-name">Footer</div>
-        <div class="comp-tokens">
-          <code>bg: Brand/Black</code>
-          <code>text: Brand/White</code>
-          <code>secondary: Neutral/Medium Gray</code>
-          <code>divider: #1a1a1a</code>
-        </div>
+        <div class="variant-tags"><span class="variant-tag">bg: Brand/Black</span><span class="variant-tag">links: #666</span><span class="variant-tag">divider: #1a1a1a</span></div>
       </div>
     </div>
   </div>
 
-  <!-- CTA Section -->
+  <!-- 09 CTA -->
   <div class="ds-section">
-    <div class="ds-section-header">
-      <span class="ds-section-num">09</span>
-      <div>
-        <div class="ds-section-title">CTA Section</div>
-        <div class="ds-section-subtitle">Full-width call-to-action banner</div>
-      </div>
+    <div class="section-header">
+      <div class="section-label">09 — CTA</div>
+      <div class="section-title">Call-to-Action Section</div>
+      <div class="section-subtitle">Full-width closing CTA — "No more agencies. Let's talk."</div>
     </div>
     <div class="component-card">
-      <div class="component-canvas dark" style="align-items:stretch;padding:0;">
-        <div style="background:#000;width:100%;padding:48px 32px;text-align:center;">
-          <p style="font-size:32px;font-weight:500;line-height:1.2;letter-spacing:-1.5px;color:#fff;margin-bottom:24px;">No more agencies.<br/>Let's talk.</p>
-          <button class="odama-btn odama-btn-orange" style="margin:0 auto;">
-            Book a Call
-            <span class="odama-btn-icon" style="border-color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.1);">&#8594;</span>
-          </button>
+      <div class="component-canvas dark-canvas" style="align-items:stretch;padding:0;">
+        <div style="background:#000;width:100%;padding:40px 28px;text-align:center;">
+          <p style="font-size:28px;font-weight:500;line-height:1.2;letter-spacing:-1.5px;color:#fff;margin-bottom:20px;">No more agencies.<br/>Let's talk.</p>
+          <button class="odama-btn odama-btn-orange" style="margin:0 auto;">Book a Call <span class="odama-btn-icon" style="border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.1);">→</span></button>
         </div>
       </div>
       <div class="component-meta">
         <div class="component-name">CTA Section</div>
-        <div class="comp-tokens">
-          <code>bg: Brand/Black</code>
-          <code>heading: H2/Large</code>
-          <code>cta: Button (Orange)</code>
-        </div>
+        <div class="variant-tags"><span class="variant-tag">bg: Brand/Black</span><span class="variant-tag">heading: H2/Large</span><span class="variant-tag">cta: Button/Orange</span></div>
       </div>
     </div>
   </div>
 
-  <!-- Client Logos -->
+  <!-- 10 Logo Strip -->
   <div class="ds-section">
-    <div class="ds-section-header">
-      <span class="ds-section-num">10</span>
-      <div>
-        <div class="ds-section-title">Client Logo Strip</div>
-        <div class="ds-section-subtitle">Horizontal scrolling logo bar with marquee animation</div>
-      </div>
+    <div class="section-header">
+      <div class="section-label">10 — Logo Strip</div>
+      <div class="section-title">Client Logo Bar</div>
+      <div class="section-subtitle">Horizontal scrolling logos with marquee animation</div>
     </div>
     <div class="component-card">
-      <div class="component-canvas" style="overflow:hidden;">
-        <div class="logo-strip">
-          {['HubSpot', 'Wooset', 'Groove', 'Venture Studio', 'Socialystic', 'PT BRA', 'Florebastille'].map(l => (
-            <span class="logo-item">{l}</span>
+      <div class="component-canvas" style="overflow:hidden;padding:20px 0;">
+        <div style="display:flex;gap:40px;align-items:center;padding:0 24px;">
+          {['HubSpot','Wooset','Groove','Venture Studio','Socialystic','PT BRA'].map(l => (
+            <span style="font-size:16px;font-weight:500;color:var(--text-primary);white-space:nowrap;letter-spacing:-0.4px;">{l}</span>
           ))}
         </div>
       </div>
       <div class="component-meta">
-        <div class="component-name">Client Logos</div>
-        <div class="comp-tokens">
-          <code>bg: Background/Warm Cream</code>
-          <code>text: Brand/Black</code>
-          <code>font: H2/Large</code>
-        </div>
+        <div class="component-name">Logo Strip</div>
+        <div class="variant-tags"><span class="variant-tag">bg: #F5F4F0</span><span class="variant-tag">font: H2/Large</span></div>
       </div>
     </div>
   </div>
+
 </BaseLayout>
-
-<style>
-  .comp-tokens {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-    margin-top: 8px;
-  }
-  .comp-tokens code {
-    font-family: 'SF Mono', 'Fira Code', monospace;
-    font-size: 10px;
-    background: var(--color-bg-light);
-    color: var(--color-bg-dark-olive);
-    padding: 2px 6px;
-    border-radius: 4px;
-    border: 1px solid #ebebeb;
-  }
-
-  .logo-strip {
-    display: flex;
-    gap: 48px;
-    align-items: center;
-    padding: 0 24px;
-  }
-  .logo-item {
-    font-size: 18px;
-    font-weight: 500;
-    color: #000;
-    white-space: nowrap;
-    letter-spacing: -0.5px;
-  }
-</style>

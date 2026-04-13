@@ -7,25 +7,23 @@ export interface Props {
   activeNav?: string;
 }
 const { title, description = 'Odama Design System Documentation', activeNav } = Astro.props;
-
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
-const navItems = [
-  { label: 'Overview', href: `${base}/`, id: 'overview', icon: '⊞' },
-];
-
-const foundationItems = [
-  { label: 'Colors',      href: `${base}/colors`,     id: 'colors',     icon: '◉' },
-  { label: 'Typography',  href: `${base}/typography`, id: 'typography', icon: 'T' },
-  { label: 'Spacing',     href: `${base}/spacing`,    id: 'spacing',    icon: '↕' },
-  { label: 'Shadows',     href: `${base}/shadows`,    id: 'shadows',    icon: '◌' },
-];
-
-const componentItems = [
-  { label: 'Components',  href: `${base}/components`, id: 'components', icon: '◧' },
-];
+const nav = {
+  General: [
+    { label: 'Overview',    href: `${base}/`,           id: 'overview',    icon: '⊞' },
+  ],
+  Foundations: [
+    { label: 'Colors',      href: `${base}/colors`,     id: 'colors',      icon: '◉' },
+    { label: 'Typography',  href: `${base}/typography`, id: 'typography',  icon: 'T' },
+    { label: 'Spacing',     href: `${base}/spacing`,    id: 'spacing',     icon: '↕' },
+    { label: 'Shadows',     href: `${base}/shadows`,    id: 'shadows',     icon: '◌' },
+  ],
+  'UI Library': [
+    { label: 'Components',  href: `${base}/components`, id: 'components',  icon: '◧' },
+  ],
+};
 ---
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,66 +34,46 @@ const componentItems = [
   <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
 </head>
 <body>
-  <div class="app-shell">
-    <!-- Sidebar -->
-    <aside class="sidebar" id="sidebar">
-      <div class="sidebar-logo">
-        <div class="sidebar-logo-mark">O</div>
-        <span class="sidebar-logo-text">Odama</span>
-        <span class="sidebar-logo-badge">v1.0</span>
+<div class="app-shell">
+
+  <!-- ── Sidebar ─────────────────────────────────────────── -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <div class="sidebar-logo-mark">
+        <svg viewBox="0 0 18 18"><path d="M9 1L16.5 14H1.5L9 1Z"/></svg>
       </div>
+      <span class="sidebar-logo-name">Odama DS</span>
+      <span class="sidebar-logo-ver">v1.0</span>
+    </div>
 
-      <nav class="sidebar-nav">
-        <div class="sidebar-section">
-          <div class="sidebar-section-label">General</div>
-          {navItems.map(item => (
+    <nav class="sidebar-nav">
+      {Object.entries(nav).map(([group, items]) => (
+        <div class="sidebar-group">
+          <div class="sidebar-group-label">{group}</div>
+          {items.map(item => (
             <a
               href={item.href}
-              class={`sidebar-link${activeNav === item.id ? ' active' : ''}`}
+              class={`nav-link${activeNav === item.id ? ' active' : ''}`}
             >
-              <span class="link-icon">{item.icon}</span>
+              <i class="nav-link-icon">{item.icon}</i>
               {item.label}
             </a>
           ))}
         </div>
+      ))}
+    </nav>
 
-        <div class="sidebar-section">
-          <div class="sidebar-section-label">Foundations</div>
-          {foundationItems.map(item => (
-            <a
-              href={item.href}
-              class={`sidebar-link${activeNav === item.id ? ' active' : ''}`}
-            >
-              <span class="link-icon">{item.icon}</span>
-              {item.label}
-            </a>
-          ))}
-        </div>
+    <div class="sidebar-footer">
+      Odama Studio &copy; 2025<br/>
+      <a href="mailto:odamastudio@gmail.com">odamastudio@gmail.com</a>
+    </div>
+  </aside>
 
-        <div class="sidebar-section">
-          <div class="sidebar-section-label">UI Library</div>
-          {componentItems.map(item => (
-            <a
-              href={item.href}
-              class={`sidebar-link${activeNav === item.id ? ' active' : ''}`}
-            >
-              <span class="link-icon">{item.icon}</span>
-              {item.label}
-            </a>
-          ))}
-        </div>
-      </nav>
+  <!-- ── Main ────────────────────────────────────────────── -->
+  <main class="main-content">
+    <slot />
+  </main>
 
-      <div class="sidebar-footer">
-        Odama Studio &copy; 2025<br />
-        <a href="mailto:odamastudio@gmail.com">odamastudio@gmail.com</a>
-      </div>
-    </aside>
-
-    <!-- Main -->
-    <main class="main-content">
-      <slot />
-    </main>
-  </div>
+</div>
 </body>
 </html>
